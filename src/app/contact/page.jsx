@@ -1,0 +1,58 @@
+import Link from 'next/link'
+import { LinkedInIcon, XIcon } from '@/components/SocialIcons'
+import { SimpleLayout } from '@/components/SimpleLayout'
+
+export const metadata = {
+  title: 'Contact',
+  description: 'Get in touch with Ravishek Ranjan — open to discussing data engineering, collaborations, or interesting projects.',
+}
+
+function SocialLink({ icon: Icon, target, rel, ...props }) {
+  return (
+    <Link className="group -m-1 p-1" target={target} rel={rel} {...props}>
+      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-blue-600 dark:fill-blue-400 dark:group-hover:fill-blue-300" />
+    </Link>
+  )
+}
+
+function MailIcon(props) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <path
+        fillRule="evenodd"
+        d="M6 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H6Zm.245 2.187a.75.75 0 0 0-.99 1.126l6.25 5.5a.75.75 0 0 0 .99 0l6.25-5.5a.75.75 0 0 0-.99-1.126L12 12.251 6.245 7.187Z"
+      />
+    </svg>
+  )
+}
+
+export default function Contact() {
+  return (
+    <SimpleLayout
+      title="Let's connect."
+      intro="Have a question, project idea, or just want to chat about full-stack engineering and real-world product building? Reach out via LinkedIn, X, or email — DMs are open and I typically respond within a day."
+    >
+      <div className="mt-6 flex gap-6">
+        <SocialLink
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.linkedin.com/in/ishu-jasrajpuria-186620148/"
+          aria-label="Follow on LinkedIn"
+          icon={LinkedInIcon}
+        />
+        <SocialLink
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://x.com/Ravishekranjan"
+          aria-label="Follow on X"
+          icon={XIcon}
+        />
+        <SocialLink
+          href="mailto:ishu.jasraj@gmail.com"
+          aria-label="Send an email"
+          icon={MailIcon}
+        />
+      </div>
+    </SimpleLayout>
+  )
+}

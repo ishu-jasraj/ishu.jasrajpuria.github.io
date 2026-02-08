@@ -1,0 +1,137 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+import TitleImage from './title-image.png'
+
+export const dynamic = 'force-static'
+
+
+export const article = {
+  author: 'Ishu Jasrajpuria',
+  date: '2025-06-30',
+  title: `Designing API Guardrails to Scale Backend Systems Safely`,
+  description: `An engineer’s guide to API guardrails: what actually enforces request validation, authentication and consistent error handling as your backend scales.`,
+  slug: 'api-guardrails-nodejs',
+  tags: ['Backend Engineering', 'API Design', 'Node.js', 'System Design', 'Security', 'Backend Migration'],
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+<Image src={TitleImage} alt="API Guardrails to Scale Backend Systems Safely illustration" />
+
+### Why API Guardrails Matter
+
+As backend systems grow, problems rarely appear overnight. They show up gradually — an endpoint missing validation, another returning a slightly different error shape, or a security check skipped because “it’s just an internal API”.
+
+Over time, these inconsistencies pile up.
+
+While working on a globally used internal platform, it became clear that **conventions and code reviews alone wouldn’t scale**. What we needed were **API guardrails** — rules enforced by the system, not remembered by developers.
+
+---
+
+### What Are API Guardrails?
+
+API guardrails are **enforced constraints in the request lifecycle** that every endpoint must pass through before reaching business logic.
+
+They exist to:
+- remove ambiguity in how APIs behave
+- prevent common mistakes by default
+- keep APIs predictable as the system grows
+
+At a high level, every request followed the same flow:
+
+**Client → Guardrails → APIs**
+
+---
+
+### Centralized Request Validation
+
+All incoming requests were validated **before** hitting any business logic.
+
+This included:
+- request bodies
+- query parameters
+- headers
+
+Why this mattered:
+- invalid requests failed early and consistently
+- defensive checks inside handlers were reduced
+- downstream services and databases were protected
+
+Validation stopped being something developers had to remember — it became part of the request lifecycle.
+
+---
+
+### Standardized Response and Error Handling
+
+Inconsistent responses quickly become a maintenance burden for clients.
+
+To address this, a **single response and error format** was enforced across all APIs:
+- consistent success payloads
+- structured error codes and messages
+- no leaking of internal implementation details
+
+This led to:
+- simpler frontend integrations
+- fewer client-side conditionals
+- cleaner logs and easier debugging
+
+---
+
+### Centralized Authentication and Authorization
+
+Security logic scattered across routes is easy to miss and hard to audit.
+
+Authentication and authorization were handled in a **centralized layer**, ensuring:
+- every request was authenticated consistently
+- role and permission checks were applied uniformly
+- no endpoint could accidentally bypass security
+
+This also made future changes safer, since access rules lived in one place.
+
+---
+
+### A Mandatory Middleware Pipeline
+
+Every API request passed through the same pipeline:
+
+- Authentication
+- Authorization
+- Validation
+- Logging
+- Error handling
+
+Business logic stayed focused on domain behavior, while cross-cutting concerns were handled once and reused everywhere.
+
+The result:
+- less boilerplate
+- faster reviews
+- more consistent APIs
+
+---
+
+### Why Guardrails Matter at Scale
+
+As systems grow:
+- APIs multiply
+- contributors change
+- shared context fades
+
+Guardrails ensure that:
+- new endpoints behave correctly by default
+- mistakes fail fast and visibly
+- the system remains predictable and easy to reason about
+
+That predictability is what allows teams to move faster without increasing risk.
+
+---
+
+### Final Thoughts
+
+One lesson stood out clearly: **discipline doesn’t scale as well as systems do**.
+
+API guardrails turn best practices into defaults. They don’t make a backend exciting — they make it **boring, safe, and maintainable**, which is exactly what you want as a system matures.
