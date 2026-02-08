@@ -37,7 +37,7 @@ function MailIcon(props) {
 
 export const metadata = {
   title: 'About',
-  description: `I'm Ravishek Ranjan — a Data & Backend Engineer with 4 years of experience building scalable systems across insurance and automotive domains. Driven by curiosity and a passion for solving complex challenges.`,
+  description: `Hi, I’m Ishu Jasrajpuria — a Full-Stack Engineer with 5 years of experience building backend-first systems across EdTech, FinTech, and consumer platforms used at global scale. Driven by curiosity and a passion for solving complex challenges.`,
 }
 
 export default function About() {
@@ -60,16 +60,16 @@ export default function About() {
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              Hi, I'm Ravishek Ranjan — a Data & Backend Engineer with 4 years of experience building scalable, reliable systems across insurance and automotive (Tekion) domains. For me, solving problems isn't just a job; it's a way to think, learn, and push boundaries.
+              Hi, I’m Ishu Jasrajpuria — a Full-Stack Engineer with 5 years of experience building backend-first systems across EdTech, FinTech, and consumer platforms used at global scale. For me, solving problems isn't just a job; it's a way to think, learn, and push boundaries.
             </p>
             <p>
-              I enjoy working in teams just as much as tackling challenges independently. Collaboration brings different perspectives, while solo work lets me dive deep and think outside the box. I believe every challenge has multiple solutions, and I love discussing and debating to find the best one.
+              I enjoy working in teams as much as tackling problems independently. Collaboration brings diverse perspectives, while solo work lets me go deep and explore ideas thoroughly. I believe most challenges have multiple solutions, and I enjoy discussing and debating to find the best one.
             </p>
             <p>
-              Curiosity drives most of my work. I often run POCs on new tools, architectures, or patterns — whether it's diving into Apache Kafka internals, spinning up AWS Glue pipelines, or testing new data lakehouse strategies. Research isn't about theory alone; it's about figuring out how something new can solve real problems.
+              Curiosity drives most of my work. I enjoy running PoCs around backend architecture, API design, and system reliability — testing ideas early to understand their trade-offs before they reach production. Research, for me, is about turning concepts into practical solutions for real-world systems.
             </p>
             <p>
-              When I'm not designing pipelines or backend systems, you'll find me reading about distributed systems or tinkering with side projects — anything that keeps me learning and building things that perform and make life easier.
+              When I’m not working on backend systems, you’ll usually find me exploring system design, experimenting with cloud-native patterns, or building small side projects using AI to automate workflows and improve performance.
             </p>
           </div>
         </div>
@@ -95,7 +95,7 @@ export default function About() {
             <SocialLink
               target="_blank"
               rel="noopener noreferrer"
-              href="https://x.com/Ravishekranjan"
+              href="https://x.com/IJasrajpuria"
               icon={XIcon}
               className="mt-4"
             >

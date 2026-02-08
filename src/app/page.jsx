@@ -324,7 +324,7 @@ export default async function Home() {
             <SocialLink
               target="_blank"
               rel="noopener noreferrer"
-              href="https://x.com/Ravishekranjan"
+              href="https://x.com/IJasrajpuria"
               aria-label="Follow on X"
               icon={XIcon}
             />

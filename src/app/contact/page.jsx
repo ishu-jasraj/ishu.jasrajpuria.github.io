@@ -4,7 +4,7 @@ import { SimpleLayout } from '@/components/SimpleLayout'
 
 export const metadata = {
   title: 'Contact',
-  description: 'Get in touch with Ravishek Ranjan — open to discussing data engineering, collaborations, or interesting projects.',
+  description: 'Get in touch with Ishu Jasrajpuria — open to discussing fullstack engineering, collaborations, or interesting projects.',
 }
 
 function SocialLink({ icon: Icon, target, rel, ...props }) {
@@ -43,7 +43,7 @@ export default function Contact() {
         <SocialLink
           target="_blank"
           rel="noopener noreferrer"
-          href="https://x.com/Ravishekranjan"
+          href="https://x.com/IJasrajpuria"
           aria-label="Follow on X"
           icon={XIcon}
         />
