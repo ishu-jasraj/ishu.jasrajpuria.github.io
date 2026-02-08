@@ -1,0 +1,152 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+import MigrationChallenges from './migration-challenges.jpeg'
+import FlowMermaid from './mermaid-data.png'
+
+export const dynamic = 'force-static'
+
+export const article = {
+  author: 'Ishu Jasrajpuria',
+  date: '2026-01-24',
+  title: `Lessons From Migrating a Legacy System Without Downtime`,
+  description: `An honest look at what worked, what didn’t, and the small choices that mattered most when evolving a live system.`,
+  slug: 'migrating-legacy-systems-without-downtime',
+  tags: ['Backend Engineering', 'System Design', 'Legacy Systems', 'Zero Downtime', 'Backend Migration', 'Software Architecture'],
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+Legacy systems rarely fail loudly. They fail slowly — through performance issues, brittle code paths, and increasing fear around change.
+
+In many real-world cases, taking downtime isn’t an option. Internal tools still have real users, real workflows, and real business impact. Migrating such systems requires careful planning, not just a new tech stack.
+
+<Image src={MigrationChallenges} alt="Designing reliable data pipelines on AWS with Kafka and Iceberg" />
+
+### The Constraints That Shaped the Migration
+
+Before any code was written, a few constraints defined the approach:
+
+- The system was already in active use
+- Downtime was not acceptable
+- Legacy and new systems had to coexist
+- Rollback had to be possible at every stage
+
+These constraints ruled out a full rewrite and forced an incremental strategy.
+
+---
+
+### Incremental Migration Over Big-Bang Rewrites
+
+A full rewrite is tempting, but risky.
+
+Instead, the migration followed an incremental approach:
+- New functionality was built on the new stack
+- Existing features were moved one at a time
+- Legacy and new systems ran in parallel
+
+This allowed progress without betting everything on a single cutover.
+
+---
+
+### Feature Isolation and Controlled Rollouts
+
+One of the most effective techniques was isolating features during migration.
+
+This made it possible to:
+- route specific traffic to the new system
+- limit blast radius when issues occurred
+- roll back instantly if needed
+
+Feature isolation turned production into a safe testing ground rather than a single point of failure.
+
+---
+
+### Keeping Data and Behavior in Sync
+
+Running two systems in parallel introduces subtle risks.
+
+Key practices included:
+- shared data contracts
+- backward-compatible schema changes
+- consistent validation and authorization logic
+
+The goal was to ensure users saw consistent behavior regardless of which system handled the request.
+
+---
+
+### Guardrails as a Safety Net
+
+Guardrails played a critical role during migration:
+- centralized validation prevented bad data
+- consistent error handling reduced surprises
+- enforced auth avoided security regressions
+
+These guardrails reduced the chance of migration-related bugs reaching users.
+
+---
+
+### Observability and Early Failure Detection
+
+Downtime-free migration only works if issues are detected early.
+
+This required:
+- clear metrics for critical flows
+- error and latency monitoring
+- confidence that regressions would surface quickly
+
+Observability made it possible to move fast without flying blind.
+
+---
+
+### Rollback Was a First-Class Feature
+
+Rollback wasn’t an afterthought.
+
+Every migration step was designed with:
+- clear rollback paths
+- minimal data coupling
+- the ability to shift traffic back instantly
+
+This removed fear from deployments and encouraged steady progress.
+
+---
+
+### What Actually Worked Well
+
+- Incremental progress over perfect plans
+- Reducing the scope of each migration step
+- Treating migration tooling as production code
+
+Small, safe steps outperformed ambitious but fragile changes.
+
+---
+
+### What I’d Do Differently Next Time
+
+- Invest earlier in observability
+- Automate more validation around migrations
+- Document rollback scenarios upfront
+
+These lessons only became obvious after running the system in production.
+
+---
+
+### Key Takeaways
+
+- Downtime-free migration is a **system design problem**, not just a technical one
+- Incremental strategies reduce risk significantly
+- Rollback must be planned, not assumed
+- Guardrails and observability are what make safe migrations possible
+
+---
+
+### Final Thoughts
+
+Migrating a legacy system without downtime isn’t about moving fast. It’s about moving safely, continuously, and with confidence.
+
+When rollback is easy and failure is visible, progress stops being scary.

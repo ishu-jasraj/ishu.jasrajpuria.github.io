@@ -42,7 +42,7 @@ export default async function ArticlesIndex() {
 
   return (
     <SimpleLayout
-      title="Writing about data engineering, backend systems, and the art of scalability."
+      title="Writing about backend systems, and the art of scalability."
       intro="This space is where I share my curiosity — from research on data systems and distributed architectures to experiments with automation and AI. If it helps even one more engineer think differently, it’s worth writing."
     >
       <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
