@@ -3,7 +3,6 @@ import Image from 'next/image'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import Probot from '@/images/logos/probot.png'
-import Cmhp from '@/images/logos/cmhp.png'
 import RoomSignal from '@/images/logos/roomsignal.png'
 
 const projects = [
@@ -16,16 +15,6 @@ const projects = [
       label: 'probot.com',
     },
     logo: Probot,
-  },
-  {
-    name: 'Community Mental Health Programme',
-    description:
-      'Contributed to an open-source full-stack project for hospitals, building features in Go (backend) and React (frontend) to support reservations and financial reporting.',
-    link: {
-      href: 'https://www.missionvivekananda.org.in/cmhp/',
-      label: 'missionvivekananda.org',
-    },
-    logo: Cmhp,
   },
   {
     name: 'RoomSignal',

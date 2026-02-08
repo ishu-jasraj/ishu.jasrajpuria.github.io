@@ -1,6 +1,6 @@
 # ravishekr7.github.io
 
-My personal portfolio website showcasing my work as a Data & Backend Engineer.
+My personal portfolio website showcasing my work as a Fullstack Engineer.
 
 **Live site:** [ravishekr7.github.io](https://ravishekr7.github.io)
 
