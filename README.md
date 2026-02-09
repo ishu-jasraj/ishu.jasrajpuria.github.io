@@ -1,8 +1,8 @@
-# ravishekr7.github.io
+# ishu.jasrajpuria.github.io
 
 My personal portfolio website showcasing my work as a Fullstack Engineer.
 
-**Live site:** [ravishekr7.github.io](https://ravishekr7.github.io)
+**Live site:** [ishu.jasrajpuria.github.io](https://ishu.jasrajpuria.github.io)
 
 ## Tech Stack
 
