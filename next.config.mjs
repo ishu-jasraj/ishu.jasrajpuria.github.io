@@ -6,6 +6,7 @@ import remarkGfm from 'remark-gfm'
 const nextConfig = {
   output: 'export',
   distDir: 'out',
+  basePath: '/ishu.jasrajpuria.github.io',
   trailingSlash: true,
   images: {
     unoptimized: true,
